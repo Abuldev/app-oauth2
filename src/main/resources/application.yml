@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/oauth2
+    username: postgres
+    password: root123
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+  security:
+    oauth2:
+      client:
+        registration:
+          facebook:
+            client-id: 838403160499221
+            client-secret: b20ae3e9e889ca023f98d963728abb2b
+          google:
+            clientId: 5014057553-8gm9um6vnli3cle5rgigcdjpdrid14m9.apps.googleusercontent.com
+            clientSecret: tWZKVLxaD_ARWsriiiUFYoIk
+            redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
+            scope:
+              - email
+              - profile
+          github:
+            client-id: f3678e9ac5cdb3cfc1f1
+            client-secret: c56f18b92e53e88b75eb2f276f01ae2dc0f40f0f
+          linkedin:
+            client-id: 77k12jvpkpi3ek
+            client-secret: dthLREQsEOXf80GL
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/taco/design/
+            scope:
+              - r_emailaddress
+              - r_liteprofile
+              - w_member_social
+        provider:
+          linkedin:
+            authorization-uri: https://www.linkedin.com/oauth/v2/authorization
+            token-uri: https://www.linkedin.com/oauth/v2/accessToken
